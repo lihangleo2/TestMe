@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.lihang.databindingstu.bean.UserBean" />
+
+        <variable
+            name="age"
+            type="int" />
+
+        <variable
+            name="anim"
+            type="com.lihang.databindingstu.bean.AnimalBean" />
+
+        <variable
+            name="valueLeo"
+            type="String" />
+
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onclickUtil"
+            type="com.lihang.databindingstu.bean.OnClickUtil" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="@{onClickListener}"
+            android:text="双向绑定" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="@{onclickUtil::onClickWithMe}"
+            android:text="真的强大" />
+
+        <Button
+            android:id="@+id/btn_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recyclerView里的使用"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:onClick="@{onClickListener}"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text='@{valueLeo}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@{age+@string/test+user.name}"
+            android:textColor="#ff0000"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(age)}"
+            android:textColor="#ff0000"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{user.name}" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@{anim.categoryName}"
+            android:textColor="#1706ff"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
+
+
+</layout>
