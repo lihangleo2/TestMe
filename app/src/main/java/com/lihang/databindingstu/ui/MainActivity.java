@@ -14,6 +14,7 @@ import com.lihang.databindingstu.bean.UserBean;
 import com.lihang.databindingstu.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+	//我这里随便加上一句话看看
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
